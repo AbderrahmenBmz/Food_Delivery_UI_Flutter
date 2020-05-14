@@ -5,6 +5,8 @@ import 'package:food_delivery/screens/restaurant_screen.dart';
 import 'package:food_delivery/widgets/rating_stars.dart';
 import 'package:food_delivery/widgets/recent_orders.dart';
 
+import 'cart_screen.dart';
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -93,8 +95,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return Column(children: restaurantList);
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,8 +110,19 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         actions: <Widget>[
           FlatButton(
-            onPressed: () {},
-            child: Text('Cart (${currentUser.cart.length})'),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => CartScreen(),
+              ),
+            ),
+            child: Text(
+              'Cart (${currentUser.cart.length})',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20.0,
+              ),
+            ),
           )
         ],
       ),
