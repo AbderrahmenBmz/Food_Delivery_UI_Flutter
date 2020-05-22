@@ -100,13 +100,13 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.account_circle),
+          icon: Icon(Icons.account_circle,color:Colors.white),
           iconSize: 30.0,
           onPressed: () {},
         ),
         title: Text(
           'Food Amber',
-          style: TextStyle(fontSize: 20.0),
+          style: TextStyle(fontSize: 20.0,color:Colors.white),
         ),
         actions: <Widget>[
           FlatButton(
